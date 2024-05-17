@@ -1,8 +1,10 @@
 import streamlit as st
 import pickle
 import numpy as np
+import tensorflow as tf
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 from tensorflow.keras.models import load_model
+
 # Load the tokenizers
 with open('tokenizer.pkl', 'rb') as f:
     tokenizer = pickle.load(f)
@@ -51,5 +53,3 @@ if st.button("Predict"):
             st.write(f"{word}: {tag}")
     else:
         st.write("Please enter a sentence to get predictions.")
-
-
